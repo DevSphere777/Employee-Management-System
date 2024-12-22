@@ -1,27 +1,104 @@
+::ng-deep body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-image: url(../../assets/bakground2.jpg);
+  background-size: cover;
+
+}
+
+
 form{
     display: flex;
     flex-direction: column;
-    background-color: red;
-    height: 100vh;
-    width: 75rem;
+    height: 90vh;
+    width: 80rem;
     justify-content: center;    
+    color: black;
+    align-items: start;
+
+}
+
+h1{
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+}
+h2{
+  color: black;
+  height: 1vh;
+  padding: 10px;
+  font-size: 40px;
 }
 
 
 form input{
-    margin-top: 4rem;
     width: 30rem;
     padding: 10px;
 }
-
-.inps{
-    display: flex;
-    justify-content: space-around;
-}
-
 
 .button-36{
     width: 80%;
     margin-left: auto;
     margin-right: auto
 }
+
+.label{
+    display: flex;
+    margin-top: 1rem;
+    padding: 10px;
+    align-items: center;
+    margin-left: 3.5rem;
+}
+
+.label input {
+    width: max-content;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    max-width: 100%;
+  }
+  
+  .coolinput label.text {
+    font-size: 0.75rem;
+    color: #818CF8;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #e8e8e8;
+    width: fit-content;
+  }
+  
+  .coolinput input.input {
+    padding: 11px 10px;
+    font-size: 1rem;
+    border: 2px #818CF8 solid;
+    border-radius: 5px;
+    background: #e8e8e8;
+  }
+  
+  .coolinput input.input:focus {
+    outline: none;
+  }
+
+  .inps{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .alredy{
+    text-align: center;
+    width: 100%;
+  }
+
