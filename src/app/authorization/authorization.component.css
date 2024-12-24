@@ -1,9 +1,7 @@
 ::ng-deep body{
-
   font-family:cursive;
   background-image: url(../../assets/bakground2.jpg);
   background-size: cover;
-
 }
 
 
@@ -11,10 +9,10 @@ form{
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 65rem;
+    width: 40em;
     justify-content: center;    
     color: black;
-    align-items: start;
+    align-items: center;
 
 }
 
@@ -32,12 +30,12 @@ h2{
 
 
 form input{
-    width: 30rem;
+    width: 30em;
     padding: 10px;
 }
 
 .button-36{
-    width: 80%;
+    width: 20em;
     margin-left: auto;
     margin-right: auto
 }
@@ -57,12 +55,6 @@ form input{
     height: 25px;
 }
 
-
-  .inps{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
 
   .alredy{
     text-align: center;
