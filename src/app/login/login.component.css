@@ -127,3 +127,15 @@ h1{
   .yellow{
     color: #FFC20E;
   }
+
+  .reg a{
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .reg{
+    position: absolute;
+    margin-left: 1rem;
+
+  }
