@@ -2,9 +2,7 @@
 
     color: white;
     font-family: sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
 }
 
 
@@ -14,7 +12,7 @@ main{
     justify-content: center;
     flex-direction: column;
     font-size: 40px;
-    width: 50%;
+    width: 70%;
     background-image: url(../../assets/backgorund.jpg);
     background-size: cover;
     background-repeat: no-repeat;
