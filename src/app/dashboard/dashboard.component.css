@@ -138,3 +138,17 @@ h2{
     margin-left: auto;
     cursor: pointer;
 }
+
+
+.employeesBtns{
+    margin-left: auto;
+}
+.employeesBtns img{
+  background-color: #3F861E;
+  height: 40px !important;
+  width:  45px !important;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
