@@ -1,1 +1,26 @@
-<app-navbar></app-navbar>
+
+<div class="container">
+<nav>
+    <ul>
+      <li class="admin">
+        <img src="../../assets/admin.png" alt="" class="admingPng">
+        <div class="adminText">
+          <p>Toko Meshvildishvili</p>
+          <span class="status">Admin</span>
+        </div>
+      </li>
+  
+      <li style="background-color: #FFC20E;"  routerLink="dashboard"><img src="../../assets/Vector-1.png" alt="">Dashboard</li>
+      <li><img src="../../assets/Vector-2.png" alt="">Messages</li>
+      <li><img src="../../assets/Vector-3.png" alt="">Jobs</li>
+      <li> <img src="../../assets/Vector-4.png" alt="">Candidates</li>
+      <li><img src="../../assets/Vector-5.png" alt="">Resumes</li>
+      <li><img src="../../assets/user-alt.png" alt="">Employee Management</li>
+      <li><img src="../../assets/Vector-6.png" alt="">Perfromance Management</li>
+      <button class="logOutButton"><img src="../../assets/log.png" alt="">Log Out</button>
+    </ul>
+  </nav>
+  <main>
+<router-outlet></router-outlet>
+</main>
+</div>
