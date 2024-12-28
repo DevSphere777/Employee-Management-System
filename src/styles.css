@@ -100,3 +100,16 @@ body{
   .owl-theme .owl-dots .owl-dot span{
     display: none !important;
   }
+
+
+  .active-link {
+    background-color: #FFC20E !important; 
+    color: black; 
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .active-link img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(18%) hue-rotate(101deg) brightness(94%) contrast(104%) !important;
+  }

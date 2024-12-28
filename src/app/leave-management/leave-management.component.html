@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="head">
+<img src="../../assets/book-open.png" alt="">
+<h1>Leave Management</h1>
+</div>
+<div class="buttons">
+  <button class="button-36" [routerLink]="['/admin/leave/settings']" routerLinkActive="active-link">Leave Settings</button>
+  <button class="button-36" [routerLink]="['/admin/leave/recall']" routerLinkActive="active-link">Leave Recall</button>
+  <button class="button-36" [routerLink]="['/admin/leave/history']" routerLinkActive="active-link">Leave History</button>
+  <button class="button-36" [routerLink]="['/admin/leave/officers']" routerLinkActive="active-link">Leave Officers</button>
+</div>
+<router-outlet></router-outlet>

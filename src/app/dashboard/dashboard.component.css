@@ -3,37 +3,6 @@ img{
     height: 100vh;
 }
 
-header img {
-    width: 50px;
-    height: 50px;
-}
-
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 2rem;
-    margin-bottom: 3rem;
-}
-
-.options img{
-    margin-left: 2rem;
-    background-color: red;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-
-header input {
-    width: 50%;
-    border-radius:1rem;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-}
-
 
 
 

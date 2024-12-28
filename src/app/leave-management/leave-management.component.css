@@ -1,0 +1,26 @@
+.button-36{
+    background-color: #253D90;
+    background-image: none;
+    padding: 0 5rem;
+}
+
+.head{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 5rem;
+}
+
+.head img{
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(18%) hue-rotate(101deg) brightness(94%) contrast(104%)
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+

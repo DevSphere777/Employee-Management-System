@@ -9,6 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LeaveManagementComponent } from './leave-management/leave-management.component';
+import { SettingsComponent } from './settings/settings.component';
+import { RecallComponent } from './recall/recall.component';
+import { HistoryComponent } from './history/history.component';
+import { OfficersComponent } from './officers/officers.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AuthorizationComponent,
     LoginComponent,
     AdminPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    LeaveManagementComponent,
+    SettingsComponent,
+    RecallComponent,
+    HistoryComponent,
+    OfficersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
