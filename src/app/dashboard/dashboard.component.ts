@@ -9,7 +9,9 @@ declare var $: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements AfterViewInit {
-  // Initialize Owl Carousel after the view has been rendered
+
+  currentMonth = new Date();
+
   ngAfterViewInit(): void {
     $('.owl-carousel').owlCarousel({
       loop: true,
