@@ -1,27 +1,67 @@
 <form action="">
   <h1>Register</h1>
-    <div class="coolinput">
-      <label for="input" class="text">First Name:</label>
-      <input type="text" placeholder="Write here..." name="firstName" class="input" [(ngModel)]="newUser.firstName">
-    </div>
+  <div class="coolinput">
+    <label for="input" class="text">First Name:</label>
+    <input type="text" placeholder="Write here..." name="firstName" class="input" [(ngModel)]="newUser.firstName">
+  </div>
 
-    <div class="coolinput">
-      <label for="input" class="text">Last Name:</label>
-      <input type="text" placeholder="Write here..." name="lastName" class="input" [(ngModel)]="newUser.lastName">
-    </div>
-    <div class="coolinput">
-      <label for="input" class="text">Email:</label>
-      <input type="text" placeholder="Write here..." name="email" class="input" [(ngModel)]="newUser.email">
-    </div>
+  <div class="coolinput">
+    <label for="input" class="text">Last Name:</label>
+    <input type="text" placeholder="Write here..." name="lastName" class="input" [(ngModel)]="newUser.lastName">
+  </div>
+  <div class="coolinput">
+    <label for="input" class="text">Email:</label>
+    <input type="text" placeholder="Write here..." name="email" class="input" [(ngModel)]="newUser.email">
+  </div>
 
-    <div class="coolinput">
-      <label for="input" class="text">Phone Number:</label>
-      <input type="number" placeholder="Write here..." name="phoneNumber" class="input" [(ngModel)]="newUser.phone">
+  <div class="coolinput">
+    <label for="input" class="text">Phone Number:</label>
+    <input type="number" placeholder="Write here..." name="phoneNumber" class="input" [(ngModel)]="newUser.phone">
+  </div>
+  <div class="coolinput">
+    <label for="input" class="text">Password</label>
+    <input type="password" placeholder="Write here..." name="password" class="input" [(ngModel)]="newUser.password">
+  </div>
+
+  <div class="list-choice">
+    <div class="list-choice-title">Month</div>
+    <div class="list-choice-objects">
+      <label>
+        <input type="radio" name="month" /> <span>January</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>February</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>March</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>April</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>May</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>June</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>July</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>September</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>October</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>November</span>
+      </label>
+      <label>
+        <input type="radio" name="month" /> <span>December</span>
+      </label>
     </div>
-    <div class="coolinput">
-      <label for="input" class="text">Password</label>
-      <input type="password" placeholder="Write here..." name="password" class="input" [(ngModel)]="newUser.password">
-    </div>
+  </div>
+
 
 
 
@@ -29,6 +69,9 @@
     <input type="checkbox" name="agree" id="agree">
     <label for="agree">I agree to all the <a href=#>Terms, Privacy Policy</a></label>
   </div>
+
+
+
 
 
   <button class="button-36" (click)="addUser()">Register</button>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 // import { Root } from './User.model';
 import { MasterService } from './master.service';
 import { HttpClient } from '@angular/common/http';
+import { Root } from './User.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   
-  users: [] = [];
+  users: Root[] = [];
 
   constructor(private backEnd:MasterService, private httpClient:HttpClient){}
 

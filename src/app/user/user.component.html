@@ -4,10 +4,11 @@
     <div class="userContainer">
         <img src="../../assets/admin.png" alt="">
         <div class="userText">
-            <h1>Redwan husein</h1>
-            <p>UI / UX Designer & UX Writer</p>
+            <h1>{{userData.username}}</h1>
+            <p>{{userData.profession}}</p>
         </div>
 
         <button class="button-36">Edit Profile</button>
+        <button class="button-36" (click)="logout()">Log Out</button>
     </div>
 </div>

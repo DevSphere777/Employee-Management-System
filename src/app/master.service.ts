@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Root } from './User.model';
 // import { Root } from './User.model';
 
 @Injectable({
@@ -12,14 +13,17 @@ export class MasterService {
 
   constructor(private http:HttpClient) { }
 
-  getUser():Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/all`);
+  getUser():Observable<Root[]>{
+    return this.http.get<Root[]>(`${this.baseUrl}/all`);
   }
   postUser(data: any): Observable<any> {
     return this.http.post(this.baseUrl, data, {
       headers: { 'Content-Type': 'application/json' },
-      responseType: 'text'  // Adjusted from 'text' to 'json' if expecting JSON response
+      responseType: 'text'  
     });
   }
- 
+
+
+  
 }
+ 
