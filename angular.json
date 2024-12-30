@@ -67,7 +67,8 @@
               "browserTarget": "EmplyeeManagement:build:production"
             },
             "development": {
-              "browserTarget": "EmplyeeManagement:build:development"
+              "browserTarget": "EmplyeeManagement:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

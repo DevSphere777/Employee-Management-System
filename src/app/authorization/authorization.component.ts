@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { MasterService } from '../master.service';
+// import { Root } from '../User.model';
+import { error } from 'jquery';
 
 @Component({
   selector: 'app-authorization',
@@ -8,20 +11,23 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Vali
 })
 export class AuthorizationComponent {
 
-  formGroup: FormGroup;
+  users: [] = [];
+
+  newUser = {
+    firstName: '',
+    lastName:'',
+    email:'',
+    phone:'',
+    password:''
+   };
 
 
-  constructor(private fb:FormBuilder){
-    this.formGroup = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNumber: new FormControl('', [Validators.required,Validators.minLength(9)]),
-      password: new FormControl('',[Validators.required, Validators.minLength(8)]),
-      confirmPassword: new FormControl('', [Validators.required])  
-    },
-    { validators: this.passwordsMatch() }
-  )
+
+
+
+  constructor(private fb:FormBuilder, private backEnd:MasterService){
+
+
   }
 
   passwordsMatch(): ValidatorFn {
@@ -31,6 +37,23 @@ export class AuthorizationComponent {
         return password === confirmPassword ? null : { passwordsMismatch: true };
     };
 }
+
+
+
+
+addUser(): void {
+  this.backEnd.postUser(this.newUser).subscribe({
+    next: (data) => {
+      console.log('User added successfully', data);
+    },
+    error: (err) => {
+      console.error('Error adding user', err);
+    }
+  });
+}
+
+
+
 
   
 }

@@ -9,6 +9,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { RecallComponent } from './recall/recall.component';
 import { HistoryComponent } from './history/history.component';
 import { OfficersComponent } from './officers/officers.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path:"", component:MainComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
     ]},
 
   ]},
+  {path:"main", component:UserComponent}
   
 ];
 

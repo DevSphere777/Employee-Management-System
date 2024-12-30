@@ -1,0 +1,36 @@
+::ng-deep body {
+    background-color: #E3EDF9;
+}
+
+.userContainer{
+    background-color: #193288;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+
+.userText{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    margin-right: auto;
+    flex-direction: column;
+    margin-left: 1rem;
+    gap: 0.5rem;
+}
+
+.userContainer .button-36{
+    background-color: #FFC20E !important;
+    background-image: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.userContainer img{
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
