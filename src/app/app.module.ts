@@ -18,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     HistoryComponent,
     OfficersComponent,
     HeaderComponent,
-    UserComponent
+    UserComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

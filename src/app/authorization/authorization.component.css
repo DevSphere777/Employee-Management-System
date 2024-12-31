@@ -62,16 +62,4 @@ form input{
   }
 
 
-  select{
-    padding: 10px;
-    margin-top: 1rem;
-    width: 75%;
-    cursor: pointer;
-    background-color: #5643CC;
-    color: white;
-    text-align: center;
-    font-size: 20px;
-    border: none;
-  }
-
-  
+ 

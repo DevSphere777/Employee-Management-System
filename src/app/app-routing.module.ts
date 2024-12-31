@@ -10,6 +10,7 @@ import { RecallComponent } from './recall/recall.component';
 import { HistoryComponent } from './history/history.component';
 import { OfficersComponent } from './officers/officers.component';
 import { UserComponent } from './user/user.component';
+import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
   {path:"", component:MainComponent},
@@ -22,7 +23,6 @@ const routes: Routes = [
       {path:"history", component:HistoryComponent},
       {path:"officers", component:OfficersComponent}
     ]},
-
   ]},
   {path:"main", component:UserComponent}
   

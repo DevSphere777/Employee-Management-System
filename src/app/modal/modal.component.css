@@ -1,0 +1,17 @@
+form{
+    width: 40%;
+}
+
+.coolinput{
+    width: 100%;
+}
+
+form button{
+    width: 20%;
+}
+
+select{
+    padding: 20px;
+    margin-right: 2.5rem;
+}
+

@@ -113,3 +113,17 @@ body{
   .active-link img {
     filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(18%) hue-rotate(101deg) brightness(94%) contrast(104%) !important;
   }
+
+  select{
+    padding: 10px;
+    margin-top: 1rem;
+    width: 75%;
+    cursor: pointer;
+    background-color: #5643CC;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+  }
+
+  

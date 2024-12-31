@@ -1,0 +1,33 @@
+<form action="">
+    <div class="coolinput">
+      <label for="input" class="text">First Name:</label>
+      <input type="text" placeholder="Write here..." name="firstName" class="input" [(ngModel)]="newUser.firstName">
+    </div>
+  
+    <div class="coolinput">
+      <label for="input" class="text">Last Name:</label>
+      <input type="text" placeholder="Write here..." name="lastName" class="input" [(ngModel)]="newUser.lastName">
+    </div>
+    <div class="coolinput">
+      <label for="input" class="text">Email:</label>
+      <input type="text" placeholder="Write here..." name="email" class="input" [(ngModel)]="newUser.email">
+    </div>
+  
+    <div class="coolinput">
+      <label for="input" class="text">Phone Number:</label>
+      <input type="number" placeholder="Write here..." name="phoneNumber" class="input" [(ngModel)]="newUser.phone">
+    </div>
+    <div class="coolinput">
+        <label for="input" class="text">Password</label>
+        <input type="password" placeholder="Write here..." name="password" class="input" [(ngModel)]="newUser.password">
+    </div>
+    
+    <select name="select" id="proffesion" [(ngModel)]="newUser.profession">
+        <option [value]="null" disabled selected>Profession</option>
+        <option value="Front-end Developer">Front-end Developer</option>
+        <option value="Back-end Developer">Back-end Developer</option>
+        <option value="Fullstack Developer">Fullstack Developer</option>
+        <option value="UI/UX Designer">UI/UX Designer</option>
+    </select>
+    <button (click)="updateUserData()" class="button-36">Edit</button>
+</form>

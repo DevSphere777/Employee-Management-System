@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Root } from './User.model';
-// import { Root } from './User.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +26,13 @@ export class MasterService {
   deleteUser(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, {
       responseType: 'text'
+    });
+  }
+
+  updateUser(id: string, data: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, data, {
+      headers: { 'Content-Type': 'application/json' },
+      responseType: 'text'  
     });
   }
 
