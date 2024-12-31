@@ -18,7 +18,8 @@ export class AuthorizationComponent {
     lastName:'',
     email:'',
     phone:'',
-    password:''
+    password:'',
+    profession:null
    };
 
 

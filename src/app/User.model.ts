@@ -1,4 +1,5 @@
 export interface Root {
+    id:string
     username:string
     firstName: string
     lastName: string
@@ -6,5 +7,6 @@ export interface Root {
     phone: string
     password: string
     profession: string
+    role:string
   }
   

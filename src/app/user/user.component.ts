@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 export class UserComponent {
 
   userData: any;
-
   constructor(private routes:Router){}
 
   ngOnInit(){
+
     const storedUser = localStorage.getItem('loggedInUser');
     
     if (storedUser) {

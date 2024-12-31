@@ -5,8 +5,8 @@
       <li class="admin">
         <img src="../../assets/admin.png" alt="" class="admingPng">
         <div class="adminText">
-          <p>Toko Meshvildishvili</p>
-          <span class="status">Admin</span>
+          <p style="text-transform: uppercase;">{{username}}</p>
+          <span class="status">{{role}}</span>
         </div>
       </li>
   
@@ -18,7 +18,7 @@
       <li><img src="../../assets/user-alt.png" alt="">Employee Management</li>
       <li [routerLink]="['/admin/leave']" routerLinkActive="active-link"><img src="../../assets/book-open.png" alt="">Leave Management</li>
       <li><img src="../../assets/Vector-6.png" alt="">Perfromance Management</li>
-      <button class="logOutButton"><img src="../../assets/log.png" alt="">Log Out</button>
+      <button class="logOutButton" (click)="logout()"><img src="../../assets/log.png" alt="">Log Out</button>
     </ul>
   </nav>
   <main>

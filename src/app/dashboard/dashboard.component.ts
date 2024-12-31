@@ -1,4 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { MasterService } from '../master.service';
+import { Root } from '../User.model';
+import { data } from 'jquery';
 
 // Declare jQuery to avoid TypeScript errors
 declare var $: any;
@@ -11,6 +14,9 @@ declare var $: any;
 export class DashboardComponent implements AfterViewInit {
 
   currentMonth = new Date();
+  users: Root[] = [];
+
+  constructor(private masterService:MasterService){}
 
   ngAfterViewInit(): void {
     $('.owl-carousel').owlCarousel({
@@ -30,4 +36,23 @@ export class DashboardComponent implements AfterViewInit {
       }
     });
   }
+
+  ngOnInit(){
+    return this.masterService.getUser().subscribe((data)=>{
+      this.users = data;
+    })
+  }
+
+
+  deleteUser(userId: string): void {
+    this.masterService.deleteUser(userId).subscribe(
+      response => {
+        console.log('User deleted successfully:', response);
+      },
+      error => {
+        console.error('Error deleting user:', error);
+      }
+    );
+  }
 }
+

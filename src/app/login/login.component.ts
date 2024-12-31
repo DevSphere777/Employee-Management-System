@@ -28,17 +28,22 @@ export class LoginComponent {
     
   }
 
-  login(){
-    const email = this.users.find(x=> x.email === this.loginForm.controls['email'].value)
-    const password= this.users.find(x=> x.password === this.loginForm.controls['password'].value)
-
-    if(email && password){
-      localStorage.setItem('loggedInUser', JSON.stringify(email));
-      localStorage.setItem('loggedInUser', JSON.stringify(password));
-      this.route.navigateByUrl('/main')
-      
+  login() {
+    const user = this.users.find(
+      x => x.email === this.loginForm.controls['email'].value &&
+           x.password === this.loginForm.controls['password'].value
+    );
+  
+    if (user) {
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
+  
+      if (user.role === 'ADMIN') {
+        this.route.navigateByUrl('/admin');
+      } else {
+        this.route.navigateByUrl('/main');
+      }
     } else {
-      console.log('error');
+      console.error('Invalid credentials');
     }
   }
 

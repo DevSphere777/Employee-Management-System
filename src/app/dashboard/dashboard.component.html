@@ -56,28 +56,17 @@
   </div>
 
   <div class="content employees">
-    <!--Applied Jobs-->
-    <div class="group">
-      <h2>Applied Jobs</h2>
-      <div class="cardCont">
-        <img src="../../assets/applied1.png" alt="">
+    <!--Users-->
+    <div class="group" style="overflow-y: scroll; height: 400px;">
+      <h2>Users</h2>
+      <div class="cardCont" *ngFor="let x of users">
+        <img src="../../assets/admin.png" alt="">
         <div class="cardContText">
-          <h3>Sales Executive</h3>
-          <span>Access Bank</span>
+          <h3>{{x.firstName}} {{x.lastName}}</h3>
+          <span>{{x.role}}</span>
         </div>
-      </div>
-      <div class="cardCont">
-        <img src="../../assets/applied2.png" alt="">
-        <div class="cardContText">
-          <h3>User Experience Designer</h3>
-          <span>Paystack</span>
-        </div>
-      </div>
-      <div class="cardCont">
-        <img src="../../assets/applied3.png" alt="">
-        <div class="cardContText">
-          <h3>Product Manager</h3>
-          <span>T-pay</span>
+        <div class="employeesBtns">
+            <button class="button-36" (click)="deleteUser(x.id)">Delete</button>
         </div>
       </div>
     </div>
