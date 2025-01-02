@@ -1,37 +1,87 @@
-::ng-deep body{
+::ng-deep body {
 
-    color: white;
-    font-family: sans-serif;
+  color: white;
+  font-family: sans-serif;
+  overflow-x: hidden;
 
 }
 
 
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 40px;
-    width: 70%;
-    background-image: url(../../assets/backgorund.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 40px;
+  width: 70%;
+  background-image: url(../../assets/backgorund.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
-h2,p,h1{
-    filter: drop-shadow(10px 10px 10px black);
-    text-align: center;
+h2,
+p,
+h1 {
+  filter: drop-shadow(10px 10px 10px black);
+  text-align: center;
 }
 
 
 .button-36 {
-    margin-left: 20px;
+  margin-left: 20px;
 
 }
-.container{
-    display: flex;
-    flex-direction: row;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.custom-auth{
+  width: 30%;
+}
+
+@media screen and (max-width:1185px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-auth{
     width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .button-36 {
+    font-size: 30px;
+    height: 100px;
+    margin-top: 1rem;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  
+
 }
 
+@media screen and (max-width:510px){
+    .button-36{
+      font-size: 20px;
+    }
+    
+  }
+
+  @media screen and (max-width:380px){
+    .button-36{
+        font-size: 15px;
+    }
+  }
+  

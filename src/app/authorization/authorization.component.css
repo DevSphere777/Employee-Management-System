@@ -2,6 +2,7 @@
   font-family:cursive;
   background-image: url(../../assets/bakground2.jpg);
   background-size: cover;
+  overflow-x: hidden;
 }
 
 
@@ -9,10 +10,10 @@ form{
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 40em;
     justify-content: center;    
     color: black;
     align-items: center;
+
 
 }
 
@@ -30,14 +31,12 @@ h2{
 
 
 form input{
-    width: 30em;
+    width: 25em;
     padding: 10px;
 }
 
 .button-36{
-    width: 20em;
-    margin-left: auto;
-    margin-right: auto
+    width: 15em;
 }
 
 .label{
@@ -63,3 +62,17 @@ form input{
 
 
  
+@media screen and (max-width:510px){
+  .button-36{
+    width: 16em;
+  }
+  
+}
+
+
+@media screen and (max-width:412px){
+  .button-36{
+    width: 10em;
+    font-size: 20px;
+  }
+}

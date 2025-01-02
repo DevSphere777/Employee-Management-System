@@ -6,6 +6,8 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -138,4 +140,74 @@ h1{
     position: absolute;
     margin-left: 1rem;
 
+  }
+
+  @media screen and (max-width:1444px) {
+ 
+
+    .leftSide{
+      width: 100%;
+    }
+
+    .rightSide{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:1330px) {
+    
+    .container{
+      flex-direction: column;
+    }
+
+    .leftSide{
+      width: 100%;
+      margin-bottom: 10rem;
+      margin-top: 10rem;
+      justify-content: center;
+    }
+
+    .rightSide{
+      width: 100%;
+      text-align: center;
+      background-image: none;
+    }
+
+    .reg{
+      width: 10em;
+    }
+
+
+   
+  }
+
+
+  @media screen and (max-width:1210px) {
+
+    .rightSide{
+     display: none;
+    }
+
+   
+  }
+
+
+
+  
+  @media screen and (max-width:510px) {
+
+    .inputbox{
+      width: 100%;
+    }
+
+    .button-36{
+      width: 100%;
+    }
+
+    .reg{
+      font-size: 1rem;
+      margin-left: 1px;
+    }
+
+   
   }

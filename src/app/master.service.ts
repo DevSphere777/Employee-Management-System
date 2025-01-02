@@ -37,6 +37,10 @@ export class MasterService {
   }
 
 
+  getElementById(id: string, data: any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/${id}`)
+  }
+
   
 }
  

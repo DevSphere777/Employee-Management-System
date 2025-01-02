@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MasterService } from '../master.service';
 import { ActivatedRoute } from '@angular/router';
+import { Root } from '../User.model';
 
 @Component({
   selector: 'app-modal',
@@ -10,7 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ModalComponent implements OnInit {
 
+
   userId: string = '';
+  logedUser: any[] = [];
+  users: Root[] =[];
   newUser = {
     firstName: null,
     lastName: null,
@@ -25,30 +29,32 @@ export class ModalComponent implements OnInit {
     private masterService: MasterService  
   ) { }
 
-  ngOnInit(): void {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-  
-    if (loggedInUser) {
-      const parsedUser = JSON.parse(loggedInUser);
-      
-      this.userId = parsedUser.id || ''; 
-      console.log('User ID from localStorage:', this.userId);
-    } else {
-      this.userId = ''; 
-      console.log('No loggedInUser found in localStorage');
-    }
-  }
+  ngOnInit()  {
+    return this.masterService.getUser().subscribe((data)=>{
+      this.users = data;
 
-  updateUserData() {
-    this.masterService.updateUser(this.userId, this.newUser).subscribe(
-      (response) => {
-        console.log('User updated successfully:', response);
-        alert('User updated successfully');
-      },
-      (error) => {
-        console.error('Error updating user:', error);
-        alert('Error updating user');
-      }
-    );
-  }
+
+      const user = localStorage.getItem('loggedInUser');
+      if(user){
+        const parsed = JSON.parse(user);
+        this.logedUser.push(parsed);
+        console.log(this.logedUser)
+        for(let i of this.logedUser){
+          this.userId = i.id;
+        }
+
+        }
+    })
+
+
+}
+
+updateUser(){
+  this.masterService.updateUser(this.userId, this.newUser).subscribe((data)=>{
+    console.log('user updated:', data)
+    console.log(this.users)
+  })
+}
+
+
 }

@@ -127,3 +127,24 @@ body{
   }
 
   
+  @media screen and (max-width:510px){
+    .coolinput input.input{
+        font-size: 0.8rem;
+    }
+
+    select{
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width:412px){
+    .coolinput input.input{
+      font-size: 0.7rem;
+  }
+
+  select{
+    width: 53%;
+  }
+
+  }
+  
