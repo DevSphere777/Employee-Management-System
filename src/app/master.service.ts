@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Root } from './User.model';
+import {tap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { Root } from './User.model';
 export class MasterService {
 
   baseUrl = "https://emsbackend-h3xs.onrender.com/user";
+
+
 
   constructor(private http:HttpClient) { }
 
@@ -22,11 +25,15 @@ export class MasterService {
     });
   }
 
+  
+
   login(user:any):Observable<any>{
     return this.http.post(`${this.baseUrl}/login`, user, {
       headers: { 'Content-Type': 'application/json',  },
-      responseType: 'text'
-    })
+      responseType: 'text',
+    }
+
+  )
   }
 
 

@@ -11,7 +11,7 @@ import { Root } from '../User.model';
 })
 export class ModalComponent implements OnInit {
 
-
+  id: any;
   userId: string = '';
   logedUser: any[] = [];
   users: Root[] =[];
@@ -32,25 +32,17 @@ export class ModalComponent implements OnInit {
   ngOnInit()  {
     return this.masterService.getUser().subscribe((data)=>{
       this.users = data;
+      const logged = this.users.find(x=> x.id);
+      console.log(logged)
+      this.id = logged?.id
 
-
-      const user = localStorage.getItem('loggedInUser');
-      if(user){
-        const parsed = JSON.parse(user);
-        this.logedUser.push(parsed);
-        console.log(this.logedUser)
-        for(let i of this.logedUser){
-          this.userId = i.id;
-        }
-
-        }
     })
 
 
 }
 
 updateUser(){
-  this.masterService.updateUser(this.userId, this.newUser).subscribe((data)=>{
+  this.masterService.updateUser(this.id, this.newUser).subscribe((data)=>{
     console.log('user updated:', data)
     console.log(this.users)
   })
