@@ -8,6 +8,7 @@ nav{
     width: 20%;
     color:white;
     font-family:sans-serif ;   
+
 }
 
 ul{
@@ -59,3 +60,33 @@ main{
 }
 
 
+@media screen  and (max-width:890px){
+    nav li{
+        font-size: 11px;
+    }
+
+  
+}
+@media screen  and (max-width:743px){
+    nav li{
+        font-size: 8px;
+    }
+}
+@media screen  and (max-width:666px){
+    nav  p{
+        display: none;
+    }
+
+    nav li img{
+        width: 50px;
+    }
+
+    nav li{
+        padding: 10px;
+    }
+
+    .logOutButton{
+        background-color: transparent;
+    }
+
+}

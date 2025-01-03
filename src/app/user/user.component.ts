@@ -30,6 +30,7 @@ export class UserComponent {
 
   logout() {
     localStorage.removeItem('jwt');
+    localStorage.removeItem('loggedInUser');
     this.routes.navigateByUrl('/login');
   }
 }

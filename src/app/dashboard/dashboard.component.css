@@ -149,3 +149,23 @@ h2{
   }
   
 }
+@media screen and (max-width:1050px){
+  main{
+    flex-direction: column;
+  }
+
+  .employees, .group{
+    width: 100%;
+  }
+
+}
+@media screen and (max-width:460px){
+  .progressBar{
+    display: none;
+  }
+
+  .progressContainer{
+    display: none;
+  }
+
+}
