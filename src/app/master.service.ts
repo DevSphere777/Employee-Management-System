@@ -16,10 +16,17 @@ export class MasterService {
     return this.http.get<Root[]>(`${this.baseUrl}/all`);
   }
   postUser(data: any): Observable<any> {
-    return this.http.post(this.baseUrl, data, {
+    return this.http.post(`${this.baseUrl}/register`, data, {
       headers: { 'Content-Type': 'application/json' },
       responseType: 'text'  
     });
+  }
+
+  login(user:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}/login`, user, {
+      headers: { 'Content-Type': 'application/json',  },
+      responseType: 'text'
+    })
   }
 
 
@@ -41,6 +48,8 @@ export class MasterService {
     return this.http.get<any>(`${this.baseUrl}/${id}`)
   }
 
-  
+
 }
+
+  
  

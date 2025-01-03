@@ -1,4 +1,4 @@
-<form action="" [formGroup]="loginForm">
+<form action="" (ngSubmit)="onSubmit()">
     <button class="button-36 reg"><a href="#">Don’t have an account yet?</a>
     </button>
     <div class="container">
@@ -7,16 +7,16 @@
         <h1>Login</h1>
         <span class="login">Login to your account</span>
         <div class="inputbox">
-            <input type="text" required="required" formControlName="email">
+            <input type="text" required="required" name="email" [(ngModel)]="loginForm.email">
             <span>email</span>
             <i></i>
         </div>
         <div class="inputbox">
-            <input type="text" required="required" formControlName="password">
+            <input type="text" required="required" name="password" [(ngModel)]="loginForm.password">
             <span>Password</span>
             <i></i>
         </div>
-        <button class="button-36" (click)="login()">Login</button>
+        <button class="button-36" type="submit">Login</button>
        </div>
 </div>
 <div class="rightSide">

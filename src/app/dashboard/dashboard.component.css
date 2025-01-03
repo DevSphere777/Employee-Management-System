@@ -32,13 +32,6 @@ img{
     align-items: flex-start;
   }
   
-  .owl-carousel .card {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    justify-content: center;
-  }
-  
 
   main{
     padding-left: 2rem;
@@ -143,4 +136,16 @@ h2{
   text-align: center;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width:1050px){
+  main{
+    flex-direction: column;
+  }
+
+  .employees, .group{
+    width: 100%;
+  }
+  
 }

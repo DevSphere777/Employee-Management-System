@@ -4,6 +4,7 @@ import { MasterService } from './master.service';
 import { HttpClient } from '@angular/common/http';
 import { Root } from './User.model';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,10 +19,7 @@ export class AppComponent {
   ngOnInit(){
 
 
-    this.backEnd.getUser().subscribe((data)=>{
-      this.users = data;
-      console.log(this.users);
-    })
+
 
   }
   
