@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
 import { MasterService } from '../master.service';
 import { BehaviorSubject, find } from 'rxjs';
 import { Root } from '../User.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,7 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private masterService:MasterService) {}
+  constructor(private masterService:MasterService, private routes:Router) {}
 
   
   ngOnInit(){
@@ -37,10 +36,8 @@ export class LoginComponent {
     return this.masterService.login(this.loginForm).subscribe(data=>{
       console.log(data);
       localStorage.setItem('jwt', data);
-     
+      this.routes.navigateByUrl('/main');  
     }
   )
-
-
   }
  }

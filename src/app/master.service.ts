@@ -9,14 +9,14 @@ import {tap} from 'rxjs/operators'
 })
 export class MasterService {
 
-  baseUrl = "https://emsbackend-h3xs.onrender.com/user";
+  baseUrl = "https://emsbackend-h3xs.onrender.com";
 
 
 
   constructor(private http:HttpClient) { }
 
   getUser():Observable<Root[]>{
-    return this.http.get<Root[]>(`${this.baseUrl}/all`);
+    return this.http.get<Root[]>(`${this.baseUrl}/user/all`);
   }
   postUser(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, data, {
@@ -44,7 +44,7 @@ export class MasterService {
   }
 
   updateUser(id: string, data: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, data, {
+    return this.http.put(`${this.baseUrl}/user/${id}`, data, {
       headers: { 'Content-Type': 'application/json' },
       responseType: 'text'  
     });
