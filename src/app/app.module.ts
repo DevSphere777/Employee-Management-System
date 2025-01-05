@@ -9,13 +9,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 
 
-import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +23,9 @@ import { AuthInterceptor } from './interceptors/auth-interceptor.service';
     MainComponent,
     AuthorizationComponent,
     LoginComponent,
-    HeaderComponent,
     UserComponent,
-    ModalComponent
+    ModalComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
