@@ -37,9 +37,8 @@ export class ModalComponent implements OnInit {
       this.id = logged?.id
 
     })
-
-
 }
+
 
 updateUser(){
   this.masterService.updateUser(this.id, this.newUser).subscribe((data)=>{

@@ -33,4 +33,20 @@ export class UserComponent {
     localStorage.removeItem('loggedInUser');
     this.routes.navigateByUrl('/login');
   }
+
+
+  editProf(){
+    const edit = document.querySelector('.modal') as HTMLElement;
+    const ovrl = document.querySelector('.overlay') as HTMLElement;
+    if (edit) {
+      if (edit.style.display === 'none' || edit.style.display === '') {
+        edit.style.display = 'block';
+        ovrl.style.display = 'block';
+      } else {
+        ovrl.style.display = 'none';
+        edit.style.display = 'none';
+      }
+    
+  }
+}
 }

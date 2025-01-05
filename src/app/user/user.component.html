@@ -1,15 +1,13 @@
-<app-header></app-header>
-
+<div class="overlay"></div>
 <div class="container">
     <div class="userContainer">
         <img src="../../assets/admin.png" alt="">
         <div class="userText">
             <h1>{{userData}}</h1>
         </div>
+        <app-modal class="modal"></app-modal>
 
-        <button class="button-36" >Edit Profile</button>
+        <button class="button-36 edit" (click)="editProf()" >Edit Profile</button>
         <button class="button-36" (click)="logout()">Log Out</button>
     </div>
 </div>
-
-<app-modal></app-modal>

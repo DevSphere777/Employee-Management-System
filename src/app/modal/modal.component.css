@@ -1,6 +1,12 @@
 form{
     width: 40%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
 }
+
 
 .coolinput{
     width: 100%;
@@ -8,10 +14,11 @@ form{
 
 form button{
     width: 20%;
+    align-self: center;
 }
 
 select{
     padding: 20px;
-    margin-right: 2.5rem;
 }
+
 

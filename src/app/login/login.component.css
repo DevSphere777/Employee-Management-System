@@ -21,7 +21,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    flex-basis: 50%;
+    min-width: 300px;
     height: 100vh;
 }
 
@@ -29,7 +30,8 @@ h1{
     position: relative;
     background-image: url(../../assets/loginB.png);
     background-size: cover;
-    width: 70%;
+    flex-basis: 70%;
+    min-width: 400px;
     height: 100vh;
     color: white;
     display: flex;
@@ -44,7 +46,7 @@ h1{
 
   .inputbox {
     position: relative;
-    width: 30rem;
+    width: 100%;
     margin-top: 1rem;
   }
 
@@ -130,17 +132,12 @@ h1{
     color: #FFC20E;
   }
 
-  .reg a{
-    text-decoration: none;
-    color: white;
-  }
-
-
   .reg{
-    position: absolute;
-    margin-left: 1rem;
-
+    text-decoration: none;
   }
+
+
+
 
   @media screen and (max-width:1444px) {
  
@@ -153,6 +150,8 @@ h1{
       width: 100%;
     }
   }
+
+  
 
   @media screen and (max-width:1330px) {
     
@@ -180,6 +179,8 @@ h1{
 
    
   }
+
+
 
 
   @media screen and (max-width:1210px) {
