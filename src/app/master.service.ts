@@ -32,7 +32,6 @@ export class MasterService {
       headers: { 'Content-Type': 'application/json',  },
       responseType: 'text',
     }
-
   )
   }
 

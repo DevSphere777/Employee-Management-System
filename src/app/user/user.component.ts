@@ -17,6 +17,7 @@ export class UserComponent {
   user: any;
   userRole: any;
 
+  
   constructor(private routes: Router, private masterService: MasterService) {}
 
   ngOnInit() {
