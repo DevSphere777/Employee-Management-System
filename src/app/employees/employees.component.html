@@ -4,6 +4,6 @@
         <p><strong>Name:</strong>{{i.firstName}}</p>
         <p><strong>LastName:</strong>{{i.lastName}}</p>
         <p><strong>Email:</strong>{{i.email}}</p>
-        <button class="button-36" (click)="deleteUser(i.id)">Delete</button>
+        <button class="button-36" (click)="deleteUser(i.id)" [disabled]="i.role === 'ADMIN'">Delete</button>
     </div>
 </div>
