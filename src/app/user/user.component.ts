@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MasterService } from '../master.service';
+import jwt_decode, { jwtDecode } from 'jwt-decode';
+
 import { Root } from '../User.model';
 
 @Component({
@@ -9,23 +11,30 @@ import { Root } from '../User.model';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-  user: Root[] = [];
+  users: Root[] = [];
   userData: string | null = null;
+  decodedToken: any;
+  user: any;
+  userRole: any;
 
   constructor(private routes: Router, private masterService: MasterService) {}
 
   ngOnInit() {
-    this.masterService.getUser().subscribe((data) => {
-      this.user = data;
+    return this.masterService.getUser().subscribe((data)=>{
+      this.users = data; 
 
-      // Find the user and store their username
-      const find = this.user.find((x) => x.id);
-      if (find && find.username) {
-        localStorage.setItem('loggedInUser', find.username);
-        this.userData = localStorage.getItem('loggedInUser');
-        console.log('Logged in user:', this.userData);
+      const token = localStorage.getItem('jwt');
+      if (token) {
+       this.decodedToken = jwtDecode(token);
+       this.user = this.users.find(x=> x.email === this.decodedToken.sub)
+       this.userRole =  this.user.role;
+       console.log(this.userRole)
+        if(this.user){
+          localStorage.setItem('loggedInUser', this.user?.username);
+          this.userData = localStorage.getItem('loggedInUser');
+        }
       }
-    });
+    })
   }
 
   logout() {
@@ -49,4 +58,12 @@ export class UserComponent {
     
   }
 }
+
+deleteUser(id: any){
+  return this.masterService.deleteUser(id).subscribe(response =>{
+    console.log(response)
+  })
+}
+
+
 }

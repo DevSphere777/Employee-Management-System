@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MasterService } from '../master.service';
 import { ActivatedRoute } from '@angular/router';
+import jwt_decode, { jwtDecode } from 'jwt-decode';
 import { Root } from '../User.model';
 
 @Component({
@@ -11,9 +12,7 @@ import { Root } from '../User.model';
 })
 export class ModalComponent implements OnInit {
 
-  id: any;
   userId: string = '';
-  logedUser: any[] = [];
   users: Root[] =[];
   newUser = {
     firstName: null,
@@ -31,17 +30,25 @@ export class ModalComponent implements OnInit {
 
   ngOnInit()  {
     return this.masterService.getUser().subscribe((data)=>{
-      this.users = data;
-      const logged = this.users.find(x=> x.id);
-      console.log(logged)
-      this.id = logged?.id
+      this.users = data; 
 
+      const token = localStorage.getItem('jwt');
+      if (token) {
+        const decodedToken: any = jwtDecode(token);
+        const user = this.users.find(x=> x.email === decodedToken.sub)
+        console.log(user)
+        if(user){
+          this.userId = user?.id
+        }
+      }
     })
+
+   
 }
 
 
 updateUser(){
-  this.masterService.updateUser(this.id, this.newUser).subscribe((data)=>{
+  this.masterService.updateUser(this.userId, this.newUser).subscribe((data)=>{
     console.log('user updated:', data)
     console.log(this.users)
   })

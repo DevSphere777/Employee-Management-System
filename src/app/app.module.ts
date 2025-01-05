@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor.service';
-import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     UserComponent,
     ModalComponent,
-    AdminComponent
   ],
   imports: [
     BrowserModule,

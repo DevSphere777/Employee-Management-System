@@ -10,4 +10,12 @@
         <button class="button-36 edit" (click)="editProf()" >Edit Profile</button>
         <button class="button-36" (click)="logout()">Log Out</button>
     </div>
+
+
+    <main *ngFor="let i of users">
+        <div class="delete" *ngIf="userRole === 'ADMIN'">
+            <p>{{i.email}}</p>
+            <button class="button-36 edit" (click)="deleteUser(i.id)">Delete</button>
+        </div>
+    </main>
 </div>

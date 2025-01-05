@@ -38,7 +38,7 @@ export class MasterService {
 
 
   deleteUser(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, {
+    return this.http.delete(`${this.baseUrl}/user/${id}`, {
       responseType: 'text'
     });
   }
