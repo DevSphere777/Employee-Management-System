@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor.service';
+import { AssignmentsComponent } from './assignments/assignments.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AuthInterceptor } from './interceptors/auth-interceptor.service';
     LoginComponent,
     UserComponent,
     ModalComponent,
+    AssignmentsComponent,
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,

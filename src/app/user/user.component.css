@@ -75,7 +75,7 @@
 }
 
 .main{
-    max-width: 100%;
+    max-width: 500px;
     height: 500px;
     overflow-y: scroll;
 }
@@ -110,3 +110,12 @@ textarea{
     height: 3rem;
     margin-left: auto;
 }
+.assignmentsContainer{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 10px 10px 10px black;
+    max-width: 100%;
+    font-size: 20px;
+}
+
+

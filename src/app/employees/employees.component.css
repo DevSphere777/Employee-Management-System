@@ -1,0 +1,21 @@
+.card{
+    background-color: white;
+    padding: 20px 100px;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 10px black;
+   width: 500px;
+    min-width: 300px;
+}
+
+.container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    margin-top: 1rem;
+}
+
+.button-36 {
+    height: max-content;
+    width: 100%;
+    margin-top: 1rem;
+}

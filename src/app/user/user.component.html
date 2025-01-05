@@ -9,24 +9,11 @@
 
     <button class="button-36 edit" (click)="editProf()">Edit Profile</button>
     <button class="button-36" (click)="logout()">Log Out</button>
+    <button class="button-36" *ngIf="userRole === 'ADMIN'"><a style="text-decoration: none; color: black;" routerLink="assignment">Assignments</a></button>
+    <button class="button-36" *ngIf="userRole === 'ADMIN'"><a style="text-decoration: none; color: black;" routerLink="employees">Employees</a></button>
   </div>
 
-  <div class="main" *ngIf="userRole === 'ADMIN'">
-    <h1 style="text-align: center; margin-top: 1rem;">Employees</h1>
-    <div class="deleteCont" *ngFor="let i of users">
-      <div class="delete">
-        <p><strong>id:</strong>{{i.id}}</p>
-        <p><strong>Name:</strong>{{i.firstName}}</p>
-        <p><strong>LastName:</strong>{{i.lastName}}</p>
-        <p><strong>Email:</strong>{{i.email}}</p>
-        <p><strong>Role:</strong>{{i.role}}</p>
-        <div class="tasksCont">
-            <input type="text" placeholder="Title">
-            <textarea name="description" id="description" placeholder="Description" rows="2" cols="100"  style="height: 40px; resize: none;"></textarea>
-            <button class="button-36">Send</button>
-          </div>
-        <button class="button-36 edit" (click)="deleteUser(i.id)" [disabled]="i.role ==='ADMIN'">Delete</button>
-      </div>
-    </div>
-  </div>
+ 
+  <router-outlet></router-outlet>
+
 </div>

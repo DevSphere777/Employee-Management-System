@@ -49,11 +49,12 @@ export class MasterService {
     });
   }
 
-
-  getElementById(id: string, data: any):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/${id}`)
-  }
+  
+  getUserAssignments(id: string):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/user/${id}/assignment`)
 }
+}
+
 
   
  
