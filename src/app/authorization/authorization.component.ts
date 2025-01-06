@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Vali
 import { MasterService } from '../master.service';
 // import { Root } from '../User.model';
 import { error } from 'jquery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authorization',
@@ -26,7 +27,7 @@ export class AuthorizationComponent {
 
 
 
-  constructor(private fb:FormBuilder, private backEnd:MasterService){
+  constructor(private backEnd:MasterService, private routes: Router){
 
 
   }
@@ -46,6 +47,7 @@ addUser(): void {
   this.backEnd.postUser(this.newUser).subscribe({
     next: (data) => {
       console.log('User added successfully', data);
+      this.routes.navigateByUrl('/login')
     },
     error: (err) => {
       console.error('Error adding user', err);

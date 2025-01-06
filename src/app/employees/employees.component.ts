@@ -14,7 +14,16 @@ export class EmployeesComponent {
   decodedToken: any;
   user: any;
   userRole: any;
+  userId: any;
 
+  newUser = {
+    firstName: null,
+    lastName: null,
+    email: null,
+    phone: null,
+    password: null,
+    profession: null
+  }
 
   constructor(private masterService:MasterService){}
 
@@ -27,6 +36,8 @@ export class EmployeesComponent {
         this.decodedToken = jwtDecode(token);
         this.user = this.users.find(x=> x.email === this.decodedToken.sub)
         this.userRole =  this.user.role;
+        this.userId = this.user.id;
+
         console.log(this.userRole)
          if(this.user){
            localStorage.setItem('loggedInUser', this.user?.username);
@@ -41,4 +52,40 @@ export class EmployeesComponent {
    })
   }
 
+  editUserById(id: string){
+      return this.masterService.updateUser(id, this.newUser).subscribe(response => {
+        console.log("response:", response)
+      })
+  }
+
+  openModal(){
+    const modal = document.querySelector('.modalUser') as HTMLElement;
+    const overlay = document.querySelector('.overlay') as HTMLElement;
+    const cards = document.querySelectorAll('.card') as NodeListOf<HTMLElement>;
+
+if (modal && overlay) {
+  overlay.addEventListener('click', () => {
+    modal.style.display = 'none';
+    overlay.style.display = 'none'; 
+
+
+    cards.forEach((card) => {
+      card.style.display = 'block'; 
+    });
+  });
+}
+
+cards.forEach((card) => {
+  card.addEventListener('click', () => {
+    modal.style.display = 'block'; 
+    overlay.style.display = 'block'; 
+
+   
+    cards.forEach((card) => {
+      card.style.display = 'none'; 
+    });
+  });
+});
+
+}
 }

@@ -19,3 +19,29 @@
     width: 100%;
     margin-top: 1rem;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.modalUser{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    height: 600px;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.773);
+    display: none;
+}

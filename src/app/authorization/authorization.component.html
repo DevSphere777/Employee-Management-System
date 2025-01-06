@@ -1,49 +1,120 @@
-<form action="">
+<form #registerForm="ngForm" (ngSubmit)="addUser()">
   <h1>Register</h1>
+
   <div class="coolinput">
-    <label for="input" class="text">First Name:</label>
-    <input type="text" placeholder="Write here..." name="firstName" class="input" [(ngModel)]="newUser.firstName">
+    <label for="firstName" class="text">First Name:</label>
+    <input 
+      id="firstName" 
+      type="text" 
+      placeholder="Write here..." 
+      name="firstName" 
+      class="input" 
+      [(ngModel)]="newUser.firstName" 
+      #firstName="ngModel" 
+      required>
+    <em class="errorMessage" *ngIf="firstName.invalid && firstName.touched">
+      First name is required
+    </em>
   </div>
 
   <div class="coolinput">
-    <label for="input" class="text">Last Name:</label>
-    <input type="text" placeholder="Write here..." name="lastName" class="input" [(ngModel)]="newUser.lastName">
+    <label for="lastName" class="text">Last Name:</label>
+    <input 
+      id="lastName" 
+      type="text" 
+      placeholder="Write here..." 
+      name="lastName" 
+      class="input" 
+      [(ngModel)]="newUser.lastName">
   </div>
+
   <div class="coolinput">
-    <label for="input" class="text">Email:</label>
-    <input type="text" placeholder="Write here..." name="email" class="input" [(ngModel)]="newUser.email">
+    <label for="email" class="text">Email:</label>
+    <input 
+      id="email" 
+      type="email" 
+      placeholder="Write here..." 
+      name="email" 
+      class="input" 
+      [(ngModel)]="newUser.email" 
+      #email="ngModel" 
+      required 
+      email>
+    <em class="errorMessage" *ngIf="email.invalid && email.touched">
+      Enter a valid email address
+    </em>
   </div>
 
   <div class="coolinput">
-    <label for="input" class="text">Phone Number:</label>
-    <input type="number" placeholder="Write here..." name="phoneNumber" class="input" [(ngModel)]="newUser.phone">
+    <label for="phoneNumber" class="text">Phone Number:</label>
+    <input 
+      id="phoneNumber" 
+      type="number" 
+      placeholder="Write here..." 
+      name="phoneNumber" 
+      class="input" 
+      [(ngModel)]="newUser.phone" 
+      #phone="ngModel" 
+      required 
+      minlength="10">
+    <em class="errorMessage" *ngIf="phone.invalid && phone.touched">
+      Phone number is required and must be at least 10 digits
+    </em>
   </div>
+
   <div class="coolinput">
-    <label for="input" class="text">Password</label>
-    <input type="password" placeholder="Write here..." name="password" class="input" [(ngModel)]="newUser.password">
+    <label for="password" class="text">Password:</label>
+    <input 
+      id="password" 
+      type="password" 
+      placeholder="Write here..." 
+      name="password" 
+      class="input" 
+      [(ngModel)]="newUser.password" 
+      #password="ngModel" 
+      required 
+      minlength="6">
+    <em class="errorMessage" *ngIf="password.invalid && password.touched">
+      Password is required and must be at least 6 characters
+    </em>
   </div>
 
-  <select name="select" id="proffesion" [(ngModel)]="newUser.profession">
-    <option [value]="null" disabled selected>Profession</option>
-    <option value="Front-end Developer">Front-end Developer</option>
-    <option value="Back-end Developer">Back-end Developer</option>
-    <option value="Fullstack Developer">Fullstack Developer</option>
-    <option value="UI/UX Designer">UI/UX Designer</option>
-  </select>
-
-
-
+  <div class="coolinput">
+    <label for="profession" class="text">Profession:</label>
+    <select 
+      id="profession" 
+      name="profession" 
+      [(ngModel)]="newUser.profession" 
+      #profession="ngModel" 
+      required>
+      <option [value]="null" disabled selected>Select your profession</option>
+      <option value="Front-end Developer">Front-end Developer</option>
+      <option value="Back-end Developer">Back-end Developer</option>
+      <option value="Fullstack Developer">Fullstack Developer</option>
+      <option value="UI/UX Designer">UI/UX Designer</option>
+    </select>
+    <em class="errorMessage" *ngIf="profession.invalid && profession.touched">
+      Please select a profession
+    </em>
+  </div>
 
   <div class="label">
-    <input type="checkbox" name="agree" id="agree">
-    <label for="agree">I agree to all the <a href=#>Terms, Privacy Policy</a></label>
+    <input 
+      type="checkbox" 
+      name="agree" 
+      id="agree" 
+      required>
+    <label for="agree">
+      I agree to all the <a href="#">Terms, Privacy Policy</a>
+    </label>
+
   </div>
 
+  <button 
+    class="button-36" 
+    [disabled]="registerForm.invalid">
+    Register
+  </button>
 
-
-
-
-  <button class="button-36" (click)="addUser()">Register</button>
-  <p class="alredy">Alredy have an account? <a href="login">Login</a></p>
-
+  <p class="already">Already have an account? <a href="login">Login</a></p>
 </form>

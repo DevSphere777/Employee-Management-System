@@ -1,9 +1,12 @@
 <div class="container">
+    <div class="overlay"></div>
+    <div class="modalUser"></div>
     <div class="card" *ngFor="let i of users"> 
         <p><strong>ID:</strong>{{i.id}}</p>
         <p><strong>Name:</strong>{{i.firstName}}</p>
         <p><strong>LastName:</strong>{{i.lastName}}</p>
         <p><strong>Email:</strong>{{i.email}}</p>
         <button class="button-36" (click)="deleteUser(i.id)" [disabled]="i.role === 'ADMIN'">Delete</button>
+        <button class="button-36"  (click)="openModal()">Edit</button>
     </div>
 </div>

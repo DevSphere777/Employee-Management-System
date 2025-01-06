@@ -60,11 +60,20 @@ form input{
     width: 100%;
   }
 
+  .errorMessage{
+    color: red;
+  }
+
 
  
 @media screen and (max-width:510px){
   .button-36{
     width: 16em;
+  }
+
+  .errorMessage{
+    font-size: 15px;
+    width: 18em;
   }
   
 }
