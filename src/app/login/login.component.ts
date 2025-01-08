@@ -23,7 +23,6 @@ export class LoginComponent {
   
   ngOnInit(){
     return this.masterService.getUser().subscribe((data)=>{
-      console.log(data);
       this.user = data;
     })
   }
@@ -34,7 +33,6 @@ export class LoginComponent {
   onSubmit(){
     console.log(this.loginForm)
     return this.masterService.login(this.loginForm).subscribe(data=>{
-      console.log(data);
       localStorage.setItem('jwt', data);
       this.routes.navigateByUrl('/main');  
     }

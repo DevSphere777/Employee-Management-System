@@ -16,7 +16,14 @@ export class UserComponent {
   decodedToken: any;
   user: any;
   userRole: any;
+  assignment: any[] = [];
+  usersTask: any[] = [];
 
+
+  tasksInputs = {
+    title: '',
+    description:'',
+  }
   
   constructor(private routes: Router, private masterService: MasterService) {}
 
@@ -24,18 +31,23 @@ export class UserComponent {
     return this.masterService.getUser().subscribe((data)=>{
       this.users = data; 
 
+
       const token = localStorage.getItem('jwt');
       if (token) {
        this.decodedToken = jwtDecode(token);
        this.user = this.users.find(x=> x.email === this.decodedToken.sub)
        this.userRole =  this.user.role;
-       console.log(this.userRole)
         if(this.user){
           localStorage.setItem('loggedInUser', this.user?.username);
           this.userData = localStorage.getItem('loggedInUser');
         }
       }
+
+   
+    
     })
+
+    
   }
 
   logout() {
@@ -65,6 +77,9 @@ deleteUser(id: any){
     console.log(response)
   })
 }
+
+
+
 
 
 }

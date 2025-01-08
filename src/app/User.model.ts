@@ -8,6 +8,6 @@ export interface Root {
     password: string
     profession: string
     role:string
-    assignment: [];
+    assignments: any[];
   }
   

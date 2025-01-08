@@ -36,7 +36,6 @@ export class ModalComponent implements OnInit {
       if (token) {
         const decodedToken: any = jwtDecode(token);
         const user = this.users.find(x=> x.email === decodedToken.sub)
-        console.log(user)
         if(user){
           this.userId = user?.id
         }
