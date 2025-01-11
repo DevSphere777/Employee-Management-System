@@ -15,8 +15,8 @@ export class EmployeesComponent {
   user: any;
   userRole: any;
   userId: any;
-  tasks: any[] = [];
- 
+
+
   newUser = {
     firstName: null,
     lastName: null,
@@ -26,18 +26,18 @@ export class EmployeesComponent {
     profession: null,
   }
 
-  newAssignment = {
-    title: '',
-    description: '',
-    users: []
-  };
+
+
+
+  
+
   constructor(private masterService:MasterService){}
 
   ngOnInit(){
     return this.masterService.getUser().subscribe((data)=>{
       this.users = data;
 
-   
+      
 
 
       const token = localStorage.getItem('jwt');
@@ -52,75 +52,17 @@ export class EmployeesComponent {
          }
       }
       
-      return this.masterService.getAssignments().subscribe(data=>{
-        this.tasks = data;
-        console.log(this.tasks)
-      })
     })
   }
 
   deleteUser(id:string){
    return this.masterService.deleteUser(id).subscribe((response)=>{
+     window.location.reload();  
    })
   }
 
-  editUserById(id: string){
-      return this.masterService.updateUser(id, this.newUser).subscribe(response => {
-      })
-  }
-
-  openModal(){
-    const modal = document.querySelector('.modalUser') as HTMLElement;
-    const overlay = document.querySelector('.overlay') as HTMLElement;
-    const cards = document.querySelectorAll('.card') as NodeListOf<HTMLElement>;
-
-if (modal && overlay) {
-  overlay.addEventListener('click', () => {
-    modal.style.display = 'none';
-    overlay.style.display = 'none'; 
 
 
-    cards.forEach((card) => {
-      card.style.display = 'block'; 
-    });
-  });
-}
 
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    modal.style.display = 'block'; 
-    overlay.style.display = 'block'; 
-
-   
-    cards.forEach((card) => {
-      card.style.display = 'none'; 
-    });
-  });
-});
-}
-
-addAssignment(){
-  console.log(this.newAssignment)
-  return this.masterService.postAssignment(this.newAssignment).subscribe((response)=>{
-    console.log(response)
-  })
-}
-
-
-assignUserToTask(task: any, user: any) {
-
-  if (!task.users) {
-    task.users = []; 
-  }
-  task.users.push(user); 
-
-
-  this.masterService.updateAssignment(task.id, task).subscribe(response => {
-    console.log('Task updated with user:', response);
-  }, error => {
-    console.error('Error updating task:', error);
-  });
-}
 
 }
-  

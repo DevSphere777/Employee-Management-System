@@ -1,38 +1,13 @@
-<div class="container" *ngFor="let i of users">
-    <div class="overlay"></div>
+<div class="container"  *ngFor="let i of users;">
+    <div class="overlay" ></div>
     <div class="modalUser"></div>
-    <div class="card" > 
+    <div class="card" *ngIf="i.email"> 
         <p><strong>ID:</strong>{{i.id}}</p>
         <p><strong>Name:</strong>{{i.firstName}}</p>
         <p><strong>LastName:</strong>{{i.lastName}}</p>
         <p><strong>Email:</strong>{{i.email}}</p>
 
-
-
-
         <button class="button-36" (click)="deleteUser(i.id)" [disabled]="i.role === 'ADMIN'">Delete</button>
-        <button class="button-36"  (click)="openModal()">Edit</button>
     </div>
 </div>
 
-<div>
-    <h2>Create and Assign Tasks</h2>
-    <form>
-      <label for="title">Title</label>
-      <input id="title" [(ngModel)]="newAssignment.title" name="title" placeholder="Assignment Title" />
-      
-      <label for="description">Description</label>
-      <input id="description" [(ngModel)]="newAssignment.description" name="description" placeholder="Assignment Description" />
-      
-      <button (click)="addAssignment()">send</button>
-      <div *ngFor="let x of tasks">
-        <div class="div" *ngFor="let i of users">
-        <br>
-        <p>{{x.title}}</p>
-        <p>{{x.description}}</p>
-        <button (click)="assignUserToTask(x,i)" >send to {{i.firstName}}</button>
-      </div>
-    </div>
-    </form>
-  </div>
-  

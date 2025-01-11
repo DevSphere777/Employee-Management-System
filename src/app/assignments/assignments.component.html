@@ -1,9 +1,31 @@
-<div class="container">
-    <div class="card">
-        <p style="text-align: center;"><strong>Title:</strong>Lorem</p>
-        <br>
-        <p><strong>Description:</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Obcaecati quibusdam, exercitationem consectetur facere blanditiis qui repellendus perspiciatis 
-            totam inventore doloribus quos? Commodi distinctio molestias voluptas odit tempora repudiandae dolorum eveniet.</p>
+<button class="button-36 btn" style="margin: 10px;" (click)="openModal()">Create</button>
+<div class="assignmentContainer">
+  <div class="assignmentCard" *ngFor="let user of users">
+    <h2 style="text-align: center;">{{ user.firstName }} {{ user.lastName }}</h2>
+    <div *ngFor="let assignment of user.assignments">
+      <h1>{{ assignment.title }}</h1>
+      <hr>
+      <p>{{ assignment.description }}</p>
     </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="assignmentModal">
+  <input type="text" [(ngModel)]="newAssignment.title" placeholder="Title">
+  <input type="text" [(ngModel)]="newAssignment.description" placeholder="Description">
+  <select *ngIf="email" (change)="onChange($event)" name="users" id="users">
+    <option disabled selected>Select</option>
+    <option *ngFor="let user of users;" [value]="user.firstName">{{user.firstName}}</option>
+  </select>
+  <ul class="user-list">
+    <li *ngFor="let user of newAssignment.users">{{ user.firstName }} {{user.lastName}}</li>
+  </ul>
+  <div class="btns">
+  <button class="button-36" (click)="confirm()">Send</button>
+  <button class="button-36" (click)="closeModal()">Close</button>
+</div>
 </div>

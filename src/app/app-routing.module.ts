@@ -4,15 +4,15 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ModalComponent } from './modal/modal.component';
-import { AssignmentsComponent } from './assignments/assignments.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { AssignmentsComponent } from './assignments/assignments.component';
 
 const routes: Routes = [
   {path:"", component:MainComponent},
   {path:"login", component:LoginComponent},
   {path:"main", component:UserComponent, children:[
-    {path:"assignment", component:AssignmentsComponent},
-    {path:"employees", component:EmployeesComponent}
+    {path:"employees", component:EmployeesComponent},
+    {path:"assignments", component:AssignmentsComponent}
   ]},
   
 ];

@@ -11,3 +11,9 @@ export interface Root {
     assignments: any[];
   }
   
+export interface assignments{
+  id:string,
+  title:string,
+  description:string,
+  users:any[];
+}

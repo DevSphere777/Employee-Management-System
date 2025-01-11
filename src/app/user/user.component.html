@@ -9,7 +9,7 @@
 
     <button class="button-36 edit" (click)="editProf()">Edit Profile</button>
     <button class="button-36" (click)="logout()">Log Out</button>
-    <button class="button-36" *ngIf="userRole === 'ADMIN'"><a style="text-decoration: none; color: black;" routerLink="assignment">Assignments</a></button>
+    <button class="button-36" *ngIf="userRole === 'ADMIN'"><a style="text-decoration: none; color: black;" routerLink="assignments">Assignments</a></button>
     <button class="button-36" *ngIf="userRole === 'ADMIN'"><a style="text-decoration: none; color: black;" routerLink="employees">Employees</a></button>
   </div>
 

@@ -25,10 +25,6 @@ export class MasterService {
     });
   }
 
-  
- 
-
-  
 
   login(user:any):Observable<any>{
     return this.http.post(`${this.baseUrl}/login`, user, {
