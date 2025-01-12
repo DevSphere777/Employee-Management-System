@@ -18,6 +18,7 @@ export class UserComponent {
   userRole: any;
   assignment: any[] = [];
   usersTask: any[] = [];
+  userAssignment: any;
 
 
   tasksInputs = {
@@ -31,19 +32,26 @@ export class UserComponent {
     return this.masterService.getUser().subscribe((data)=>{
       this.users = data; 
 
+   
+
 
       const token = localStorage.getItem('jwt');
       if (token) {
        this.decodedToken = jwtDecode(token);
        this.user = this.users.find(x=> x.email === this.decodedToken.sub)
        this.userRole =  this.user.role;
+       this.userAssignment = this.user.assignments;
+      console.log(this.userAssignment)
         if(this.user){
           localStorage.setItem('loggedInUser', this.user?.username);
           this.userData = localStorage.getItem('loggedInUser');
         }
       }
 
-   
+      return this.masterService.getAssignments().subscribe((data)=>{
+        this.assignment = data;
+        console.log(this.assignment)
+      })
     
     })
 
@@ -60,13 +68,16 @@ export class UserComponent {
   editProf(){
     const edit = document.querySelector('.modal') as HTMLElement;
     const ovrl = document.querySelector('.overlay') as HTMLElement;
+    const body = document.querySelector('.assignmentContainer') as HTMLElement
     if (edit) {
       if (edit.style.display === 'none' || edit.style.display === '') {
         edit.style.display = 'block';
         ovrl.style.display = 'block';
+        body.style.display = 'none';
       } else {
         ovrl.style.display = 'none';
         edit.style.display = 'none';
+        body.style.display = 'flex';
       }
     
   }

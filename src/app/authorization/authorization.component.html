@@ -2,7 +2,7 @@
   <h1>Register</h1>
 
   <div class="coolinput">
-    <label for="firstName" class="text">First Name:</label>
+    <label for="firstName">First Name:</label>
     <input 
       id="firstName" 
       type="text" 
@@ -18,7 +18,7 @@
   </div>
 
   <div class="coolinput">
-    <label for="lastName" class="text">Last Name:</label>
+    <label for="lastName">Last Name:</label>
     <input 
       id="lastName" 
       type="text" 
@@ -29,7 +29,7 @@
   </div>
 
   <div class="coolinput">
-    <label for="email" class="text">Email:</label>
+    <label for="email">Email:</label>
     <input 
       id="email" 
       type="email" 
@@ -46,7 +46,7 @@
   </div>
 
   <div class="coolinput">
-    <label for="phoneNumber" class="text">Phone Number:</label>
+    <label for="phoneNumber">Phone Number:</label>
     <input 
       id="phoneNumber" 
       type="number" 
@@ -63,7 +63,7 @@
   </div>
 
   <div class="coolinput">
-    <label for="password" class="text">Password:</label>
+    <label for="password">Password:</label>
     <input 
       id="password" 
       type="password" 
@@ -80,7 +80,6 @@
   </div>
 
   <div class="coolinput">
-    <label for="profession" class="text">Profession:</label>
     <select 
       id="profession" 
       name="profession" 
@@ -98,18 +97,7 @@
     </em>
   </div>
 
-  <div class="label">
-    <input 
-      type="checkbox" 
-      name="agree" 
-      id="agree" 
-      required>
-    <label for="agree">
-      I agree to all the <a href="#">Terms, Privacy Policy</a>
-    </label>
-
-  </div>
-
+  <br>
   <button 
     class="button-36" 
     [disabled]="registerForm.invalid">

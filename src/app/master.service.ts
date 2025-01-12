@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { Root } from './User.model';
-import {switchMap, tap} from 'rxjs/operators'
+import {catchError, switchMap, tap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,9 @@ export class MasterService {
 
 
   getUser():Observable<Root[]>{
-    return this.http.get<Root[]>(`${this.baseUrl}/user`);
+    return this.http.get<Root[]>(`${this.baseUrl}/user`).pipe(
+      catchError(this.handleError)
+    );
   }
   postUser(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, data, {
@@ -74,6 +76,19 @@ updateAssignment(id:string, data:any):Observable<any>{
     headers: { 'Content-Type': 'application/json',  },
     responseType: 'text',
   })
+}
+
+private handleError(error: HttpErrorResponse) {
+  let errorMessage = 'An unknown error occurred!';
+  if (error.status === 401) {
+    errorMessage = 'You are not authorized to access this resource. Please log in.';
+  } else if (error.status === 403) {
+    errorMessage = 'You do not have permission to perform this action.';
+  } else if (error.status === 404) {
+    errorMessage = 'The requested resource was not found.';
+  }
+
+  return throwError(() => errorMessage);
 }
 
 }

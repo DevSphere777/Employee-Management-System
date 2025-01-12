@@ -7,6 +7,8 @@ export interface Root {
     phone: string
     password: string
     profession: string
+    enabled:boolean
+    mailVerificationToken:string;
     role:string
     assignments: any[];
   }

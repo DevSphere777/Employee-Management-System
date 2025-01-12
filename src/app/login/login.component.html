@@ -1,6 +1,14 @@
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+<div class="leftSide">
 <form action="" (ngSubmit)="onSubmit()">
+
+
     <div class="container">
+        
         <div class="leftSide">
+         
        <div class="inputs">
         <h1>Login</h1>
         <span class="login">Login to your account</span>
@@ -16,6 +24,7 @@
         </div>
         <button class="button-36" type="submit">Login</button>
         <br>
+  
         <a href="#" class="reg">Don’t have an account yet?</a>
        </div>
 </div>

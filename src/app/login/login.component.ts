@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  errorMessage: string  = ''
   user: Root[] = [];
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
@@ -18,24 +19,37 @@ export class LoginComponent {
     password: '',
   };
 
+  
   constructor(private masterService:MasterService, private routes:Router) {}
 
   
   ngOnInit(){
     return this.masterService.getUser().subscribe((data)=>{
       this.user = data;
+      
+
     })
+
+    
   }
 
   
 
 
   onSubmit(){
-    console.log(this.loginForm)
-    return this.masterService.login(this.loginForm).subscribe(data=>{
-      localStorage.setItem('jwt', data);
-      this.routes.navigateByUrl('/main');  
+
+    return this.masterService.login(this.loginForm).subscribe({
+      next: (data) =>{
+      localStorage.setItem('jwt',data);
+      this.routes.navigateByUrl('/main'); 
+    },
+
+    error: (error) => {
+      this.errorMessage = "The requested user was not found or the email is not verified."
     }
-  )
+
+  
+  })
   }
- }
+}
+
